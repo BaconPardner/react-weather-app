@@ -1,6 +1,8 @@
 import { IDaily } from "../../types/weather";
 import WeatherIcon from "../WeatherIcon";
 import styles from "../card.module.css";
+import { WeatherContext } from "../../lib/context";
+import { useContext } from "react";
 
 type DailyWeatherCardProps = {
   data: IDaily;
@@ -8,7 +10,15 @@ type DailyWeatherCardProps = {
 };
 
 const DailyWeatherCard = ({ data, id }: DailyWeatherCardProps) => {
-  const { time, weathercode, temperature_2m_max, temperature_2m_min } = data;
+  const { daytime, setDayTime, setSelectedDay } = useContext(WeatherContext);
+  const {
+    time,
+    weathercode,
+    sunrise,
+    sunset,
+    temperature_2m_max,
+    temperature_2m_min,
+  } = data;
 
   const dateTime = new Date(time[id]);
   const dayName = new Intl.DateTimeFormat("en-US", { weekday: "short" }).format(
@@ -17,7 +27,13 @@ const DailyWeatherCard = ({ data, id }: DailyWeatherCardProps) => {
   const dayDate = dateTime.getDate();
 
   return (
-    <article className={styles.card}>
+    <article
+      className={styles.dailyCard}
+      onClick={() => {
+        setDayTime({ sunrise: sunrise[id], sunset: sunset[id] });
+        setSelectedDay(id);
+      }}
+    >
       <header>
         {dayName} {dayDate}
       </header>

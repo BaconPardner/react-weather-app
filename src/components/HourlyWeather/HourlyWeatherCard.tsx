@@ -20,18 +20,19 @@ const HourlyWeatherCard = ({ data, id }: HourlyWeatherCardProps) => {
     minute: "2-digit",
   });
 
-  const currentHour = dateTime.getHours();
+  const currentWeatherHour = dateTime.getHours();
   const sunrise = new Date(daytime.sunrise).getHours();
   const sunset = new Date(daytime.sunset).getHours();
 
   const timeOfDay = () => {
-    if (currentHour > sunrise && currentHour < sunset) return "Day";
+    if (currentWeatherHour > sunrise && currentWeatherHour < sunset)
+      return "Day";
 
     return "Night";
   };
 
   return (
-    <article className={styles.card}>
+    <article className={styles.hourlyCard}>
       <header>{parsedTime}</header>
       <main>
         <WeatherIcon weatherCode={weathercode[id]} timeOfDay={timeOfDay()} />
