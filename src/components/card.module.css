@@ -1,10 +1,19 @@
-.cardSection {
+.hourlyCards {
   margin: 1rem;
-  color: white;
+  display: flex;
+  overflow: auto;
 }
 
-.cardSection > h1 {
-  margin-bottom: 1rem;
+.dailyCards {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cardsHeading {
+  padding-left: 1rem;
 }
 
 .cardRow {
@@ -39,11 +48,12 @@ footer {
   gap: 5px;
 }
 
-footer > .minimum {
-  font-size: 1.5rem;
+footer > .maximum {
+  font-size: 1.75rem;
 }
 
-footer > .maximum {
+footer > .minimum {
   color: rgb(209, 213, 219);
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
+

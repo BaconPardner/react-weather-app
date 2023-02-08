@@ -8,14 +8,16 @@ type DailyWeatherProps = {
 
 const DailyWeather = ({ data }: DailyWeatherProps) => {
   return (
-    <section className={styles.cardSection}>
-      <h1>Daily</h1>
-      <div className={styles.cardRow}>
-        {data.weathercode.map((temp, idx) => (
-          <DailyWeatherCard data={data} id={idx} key={idx} />
-        ))}
-      </div>
-    </section>
+    <>
+      <h2 className={styles.cardsHeading}>Daily</h2>
+      <section className={styles.dailyCards}>
+        <div className={styles.cardRow}>
+          {data.weathercode.map((temp, idx) => (
+            <DailyWeatherCard data={data} id={idx} key={idx} />
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 

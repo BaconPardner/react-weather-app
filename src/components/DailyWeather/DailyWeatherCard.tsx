@@ -25,10 +25,10 @@ const DailyWeatherCard = ({ data, id }: DailyWeatherCardProps) => {
         <WeatherIcon weatherCode={weathercode[id]} timeOfDay="Day" />
       </main>
       <footer>
-        <p className={styles.minimum}>
+        <p className={styles.maximum}>
           {temperature_2m_max[id].toFixed()}&#176;
         </p>
-        <p className={styles.maximum}>
+        <p className={styles.minimum}>
           {temperature_2m_min[id].toFixed()}&#176;
         </p>
         {/* <p>{precipitation_sum[id]}</p> */}
