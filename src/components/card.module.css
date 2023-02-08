@@ -1,0 +1,49 @@
+.cardSection {
+  margin: 1rem;
+  color: white;
+}
+
+.cardSection > h1 {
+  margin-bottom: 1rem;
+}
+
+.cardRow {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+
+.card {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  min-width: 8rem;
+}
+
+.card:hover {
+  background: rgb(250, 1250, 250, 0.2);
+}
+
+header {
+  padding-top: 1rem;
+}
+
+main {
+  width: 8rem;
+  margin-left: -10px;
+}
+
+footer {
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+footer > .minimum {
+  font-size: 1.5rem;
+}
+
+footer > .maximum {
+  color: rgb(209, 213, 219);
+  font-size: 1.25rem;
+}

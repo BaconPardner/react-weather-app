@@ -1,5 +1,6 @@
-import CurrentWeather from "../currentWeather";
-import Card from "../card";
+import CurrentWeather from "../CurrentWeather";
+import DailyWeather from "../DailyWeather";
+import HourlyWeather from "../HourlyWeather";
 import useWeatherData from "./useWeatherData";
 import "./weather.modules.css";
 
@@ -22,11 +23,8 @@ const Weather = () => {
     <>
       <h1>Weather App</h1>
       <CurrentWeather />
-      <section className="card-row">
-        {data.hourly.precipitation.map((temp, idx) => (
-          <Card hourlyData={data.hourly} id={idx} key={idx} />
-        ))}
-      </section>
+      <DailyWeather data={data.daily} />
+      <HourlyWeather data={data.hourly} />
       <footer>
         Weather icons by{" "}
         <a href="https://bas.dev/" target="_blank" rel="noopener noreferrer">
