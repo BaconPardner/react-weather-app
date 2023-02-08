@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { WeatherContext } from "../../lib/context";
 import CurrentWeather from "../CurrentWeather";
 import DailyWeather from "../DailyWeather";
 import HourlyWeather from "../HourlyWeather";
@@ -6,6 +8,7 @@ import styles from "./weather.module.css";
 
 const Weather = () => {
   const { isLoading, error, data } = useWeatherData();
+  const { setDayTime, daytime } = useContext(WeatherContext);
 
   if (isLoading) return <div>Loading...</div>;
 
@@ -21,8 +24,7 @@ const Weather = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Weather App</h1>
-      <CurrentWeather />
+      <CurrentWeather city="Dallas" state="TX" data={data.hourly} />
       <DailyWeather data={data.daily} />
       <HourlyWeather data={data.hourly} />
       <footer>

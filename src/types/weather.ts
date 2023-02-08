@@ -15,6 +15,8 @@ export interface IWeather {
 export interface IDaily {
   time: Date[];
   weathercode: number[];
+  sunrise: string[];
+  sunset: string[];
   temperature_2m_max: number[];
   temperature_2m_min: number[];
   precipitation_sum: number[];
