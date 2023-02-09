@@ -3,6 +3,7 @@ import WeatherIcon from "../WeatherIcon";
 import styles from "../card.module.css";
 import { WeatherContext } from "../../lib/context";
 import { useContext } from "react";
+import weatherInformation from "../../lib/weatherInformation";
 
 type DailyWeatherCardProps = {
   data: IDaily;
@@ -10,7 +11,7 @@ type DailyWeatherCardProps = {
 };
 
 const DailyWeatherCard = ({ data, id }: DailyWeatherCardProps) => {
-  const { daytime, setDayTime, setSelectedDay } = useContext(WeatherContext);
+  const { setSelectedDay } = useContext(WeatherContext);
   const {
     time,
     weathercode,
@@ -30,8 +31,11 @@ const DailyWeatherCard = ({ data, id }: DailyWeatherCardProps) => {
     <article
       className={styles.dailyCard}
       onClick={() => {
-        setDayTime({ sunrise: sunrise[id], sunset: sunset[id] });
-        setSelectedDay(id);
+        setSelectedDay({
+          dayOfTheWeek: id,
+          sunrise: sunrise[id],
+          sunset: sunset[id],
+        });
       }}
     >
       <header>
@@ -40,15 +44,17 @@ const DailyWeatherCard = ({ data, id }: DailyWeatherCardProps) => {
       <main>
         <WeatherIcon weatherCode={weathercode[id]} timeOfDay="Day" />
       </main>
-      <footer>
+      <div className={styles.temperature}>
         <p className={styles.maximum}>
-          {temperature_2m_max[id].toFixed()}&#176;
+          {temperature_2m_max[id].toFixed().replace("-0", "0")}&#176;
         </p>
         <p className={styles.minimum}>
-          {temperature_2m_min[id].toFixed()}&#176;
+          {temperature_2m_min[id].toFixed().replace("-0", "0")}&#176;
         </p>
-        {/* <p>{precipitation_sum[id]}</p> */}
-      </footer>
+      </div>
+      <p className={styles.weatherInfo}>
+        {weatherInformation(weathercode[id])}
+      </p>
     </article>
   );
 };

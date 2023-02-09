@@ -10,6 +10,7 @@ type HourlyWeatherProps = {
 
 const HourlyWeather = ({ data }: HourlyWeatherProps) => {
   const { selectedDay } = useContext(WeatherContext);
+  const { dayOfTheWeek } = selectedDay;
 
   const time = new Date(Date.now()).getHours();
 
@@ -19,10 +20,10 @@ const HourlyWeather = ({ data }: HourlyWeatherProps) => {
       <section className={styles.cardSection}>
         <div className={styles.hourlyCards}>
           {[
-            ...Array(selectedDay >= 1 ? 24 * (selectedDay + 1) : 24 + time),
+            ...Array(dayOfTheWeek >= 1 ? 24 * (dayOfTheWeek + 1) : 24 + time),
           ].map(
             (n, idx) =>
-              idx >= (selectedDay >= 1 ? 24 * selectedDay : time) && (
+              idx >= (dayOfTheWeek >= 1 ? 24 * dayOfTheWeek : time) && (
                 <HourlyWeatherCard data={data} id={idx} key={idx} />
               )
           )}

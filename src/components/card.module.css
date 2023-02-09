@@ -48,19 +48,24 @@ main {
   margin-left: -10px;
 }
 
-footer {
-  padding-bottom: 1rem;
+.temperature {
+  padding-bottom: 0.25rem;
   display: flex;
   align-items: baseline;
   gap: 5px;
 }
 
-footer > .maximum {
+.temperature > .maximum {
   font-size: 1.75rem;
 }
 
-footer > .minimum {
+.temperature > .minimum {
   color: rgb(209, 213, 219);
   font-size: 1rem;
+}
+
+.weatherInfo {
+  font-size: 14px;
+  padding-bottom: 1rem;
 }
 

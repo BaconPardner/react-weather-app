@@ -13,10 +13,13 @@
   width: 100%;
 }
 
-.container > footer > p {
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 14px;  
+.container > footer > div {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  font-size: 14px; 
+  width: 100%; 
+  padding-bottom: 1rem;
 }
 
 .container > footer > p > a:hover {

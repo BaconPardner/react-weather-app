@@ -7,8 +7,8 @@ import useWeatherData from "./useWeatherData";
 import styles from "./weather.module.css";
 
 const Weather = () => {
-  const { isLoading, error, data } = useWeatherData();
-  const { setDayTime, daytime } = useContext(WeatherContext);
+  const { fetchOptions } = useContext(WeatherContext);
+  const { isLoading, error, data } = useWeatherData(fetchOptions);
 
   if (isLoading) return <div>Loading...</div>;
 
@@ -28,12 +28,12 @@ const Weather = () => {
       <DailyWeather data={data.daily} />
       <HourlyWeather data={data.hourly} />
       <footer>
-        <p>
-          Weather icons by{" "}
+        <div>
+          <p>Weather icons by </p>
           <a href="https://bas.dev/" target="_blank" rel="noopener noreferrer">
             Bas Milius
           </a>
-        </p>
+        </div>
       </footer>
     </div>
   );

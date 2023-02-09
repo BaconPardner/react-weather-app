@@ -3,6 +3,7 @@ import WeatherIcon from "../WeatherIcon";
 import styles from "../card.module.css";
 import { useContext } from "react";
 import { WeatherContext } from "../../lib/context";
+import weatherInformation from "../../lib/weatherInformation";
 
 type HourlyWeatherCardProps = {
   data: IHourly;
@@ -12,7 +13,7 @@ type HourlyWeatherCardProps = {
 const HourlyWeatherCard = ({ data, id }: HourlyWeatherCardProps) => {
   const { temperature_2m, time, weathercode } = data;
 
-  const { daytime } = useContext(WeatherContext);
+  const { selectedDay } = useContext(WeatherContext);
 
   const dateTime = new Date(time[id]);
   const parsedTime = dateTime.toLocaleString("hu-HU", {
@@ -21,8 +22,8 @@ const HourlyWeatherCard = ({ data, id }: HourlyWeatherCardProps) => {
   });
 
   const currentWeatherHour = dateTime.getHours();
-  const sunrise = new Date(daytime.sunrise).getHours();
-  const sunset = new Date(daytime.sunset).getHours();
+  const sunrise = new Date(selectedDay.sunrise).getHours();
+  const sunset = new Date(selectedDay.sunset).getHours();
 
   const timeOfDay = () => {
     if (currentWeatherHour > sunrise && currentWeatherHour < sunset)
@@ -37,9 +38,12 @@ const HourlyWeatherCard = ({ data, id }: HourlyWeatherCardProps) => {
       <main>
         <WeatherIcon weatherCode={weathercode[id]} timeOfDay={timeOfDay()} />
       </main>
-      <footer>
-        <p className={styles.minimum}>{temperature_2m[id].toFixed()}&#176;</p>
-      </footer>
+      <div className={styles.temperature}>
+        <p>{temperature_2m[id]}&#176;</p>
+      </div>
+      <p className={styles.weatherInfo}>
+        {weatherInformation(weathercode[id])}
+      </p>
     </article>
   );
 };

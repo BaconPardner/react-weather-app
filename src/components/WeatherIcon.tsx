@@ -66,10 +66,10 @@ const DayWeatherIcons = [
   { key: 85, value: <Snow /> },
   { key: 86, value: <Snow /> },
 
-  { key: 95, value: <Hail /> },
+  { key: 95, value: <Thunderstorm /> },
 
-  { key: 96, value: <Thunderstorm /> },
-  { key: 97, value: <Thunderstorm /> },
+  { key: 96, value: <Hail /> },
+  { key: 99, value: <Hail /> },
 ];
 
 const NightWeatherIcons = [
@@ -109,10 +109,10 @@ const NightWeatherIcons = [
   { key: 85, value: <Snow /> },
   { key: 86, value: <Snow /> },
 
-  { key: 95, value: <Hail /> },
+  { key: 95, value: <Thunderstorm /> },
 
-  { key: 96, value: <Thunderstorm /> },
-  { key: 97, value: <Thunderstorm /> },
+  { key: 96, value: <Hail /> },
+  { key: 99, value: <Hail /> },
 ];
 
 export default WeatherIcon;

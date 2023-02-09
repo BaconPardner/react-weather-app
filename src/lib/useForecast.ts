@@ -1,13 +1,17 @@
 import { useState } from "react";
+import { UseWeatherDataProps } from "../types/useWeatherProps";
 
 const useForecast = () => {
-  const [selectedDay, setSelectedDay] = useState(0);
-  const [daytime, setDayTime] = useState({
+  const [fetchOptions, setFetchOptions] = useState<UseWeatherDataProps>({
+    temperatureUnit: "celsius",
+  });
+  const [selectedDay, setSelectedDay] = useState({
+    dayOfTheWeek: 0,
     sunrise: "",
     sunset: "",
   });
 
-  return { selectedDay, setSelectedDay, daytime, setDayTime };
+  return { fetchOptions, setFetchOptions, selectedDay, setSelectedDay };
 };
 
 export default useForecast;
