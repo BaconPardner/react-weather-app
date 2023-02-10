@@ -1,8 +1,8 @@
 const WMOCodes = [
   { key: 0, value: "Clear sky" },
 
-  { key: 1, value: "Mainly clear" },
-  { key: 2, value: "Partly cloudy" },
+  { key: 1, value: "Partly cloudy" },
+  { key: 2, value: "Cloudy" },
   { key: 3, value: "Overcast" },
 
   { key: 45, value: "Fog" },

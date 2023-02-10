@@ -1,0 +1,87 @@
+.navbar {
+  background-color: #12446f;
+  width: 100%;
+  position: sticky;
+}
+
+.searchBar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 3rem;
+  max-width: 1155px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.searchInput {
+  display: flex;
+  gap: 0.5rem;
+  background-color: #2b5377; 
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 20rem;
+}
+
+.searchInput > input {
+  all: unset;
+  border: none;
+}
+
+.icon {
+  width: 1.5rem;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.results {
+  position: absolute;
+  background-color: #2b5377;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  width: 20.5rem;
+  z-index: 200;
+}
+
+
+
+.row {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 2.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 50%;
+}
+
+.countryCode {
+  position: absolute;
+  left: 1rem;
+  margin-top: 4px;
+  font-size: 10px;
+}
+  
+.rowDefault {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 2.5rem;
+  cursor: pointer;
+  overflow: hidden;
+} 
+
+.rowSelected {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 2.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #236eb1;
+}

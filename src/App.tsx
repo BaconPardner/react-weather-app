@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Navbar from "./components/Navbar";
 import Weather from "./components/Weather";
 
 import "./global.css";
@@ -12,6 +13,7 @@ const App = () => {
   return (
     <WeatherContext.Provider value={providerValue}>
       <QueryClientProvider client={queryClient}>
+        <Navbar />
         <Weather />
       </QueryClientProvider>
     </WeatherContext.Provider>

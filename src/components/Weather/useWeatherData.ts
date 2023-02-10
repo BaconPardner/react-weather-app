@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { WeatherContext } from "../../lib/context";
-import { UseWeatherDataProps } from "../../types/useWeatherProps";
+import { UseWeatherDataProps } from "../../types/hookProps";
 import { IWeather } from "../../types/weather";
 
 const useWeatherData = ({ temperatureUnit }: UseWeatherDataProps) => {

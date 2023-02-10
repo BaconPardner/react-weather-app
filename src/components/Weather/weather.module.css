@@ -2,7 +2,6 @@
   max-width: 1155px;
   margin-left: auto;
   margin-right: auto;
-  color: white;
   min-height: 100vh;
   position: relative;
 }
@@ -22,6 +21,6 @@
   padding-bottom: 1rem;
 }
 
-.container > footer > p > a:hover {
+.weatherIcons:hover {
   color: deepskyblue;
 }

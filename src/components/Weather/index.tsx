@@ -24,13 +24,18 @@ const Weather = () => {
 
   return (
     <div className={styles.container}>
-      <CurrentWeather city="Dallas" state="TX" data={data.hourly} />
+      <CurrentWeather data={data.hourly} />
       <DailyWeather data={data.daily} />
       <HourlyWeather data={data.hourly} />
       <footer>
         <div>
           <p>Weather icons by </p>
-          <a href="https://bas.dev/" target="_blank" rel="noopener noreferrer">
+          <a
+            className={styles.weatherIcons}
+            href="https://bas.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Bas Milius
           </a>
         </div>

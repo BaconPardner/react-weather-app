@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { WeatherContext } from "../../lib/context";
-import { UseWeatherDataProps } from "../../types/useWeatherProps";
+import { UseWeatherDataProps } from "../../types/useWeatherDataProps";
 import styles from "./currentWeather.module.css";
 
 const TemperatureButton = ({

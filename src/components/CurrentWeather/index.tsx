@@ -3,21 +3,22 @@ import WeatherIcon from "../WeatherIcon";
 import styles from "./currentWeather.module.css";
 import weatherInformation from "../../lib/weatherInformation";
 import TemperatureButton from "./TemperatureButton";
+import { WeatherContext } from "../../lib/context";
+import { useContext } from "react";
 
 type CurrentWeatherProps = {
-  city: string;
-  state: string;
   data: IHourly;
 };
 
-const CurrentWeather = ({ city, state, data }: CurrentWeatherProps) => {
+const CurrentWeather = ({ data }: CurrentWeatherProps) => {
+  const { cityData } = useContext(WeatherContext);
   const { temperature_2m, weathercode } = data;
   const id = new Date(Date.now()).getHours();
 
   return (
     <section className={styles.currentWeather}>
       <h1>
-        {city}, {state}
+        {cityData.name}, {cityData.admin1}
       </h1>
       <main>
         <div className={styles.icon}>

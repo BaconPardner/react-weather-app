@@ -1,7 +1,11 @@
 import { useState } from "react";
-import { UseWeatherDataProps } from "../types/useWeatherProps";
+import { IResult } from "../types/geocode";
+import { UseWeatherDataProps } from "../types/hookProps";
 
 const useForecast = () => {
+  const [cityData, setCityData] = useState(
+    {} as Pick<IResult, "id" | "name" | "admin1">
+  );
   const [fetchOptions, setFetchOptions] = useState<UseWeatherDataProps>({
     temperatureUnit: "celsius",
   });
@@ -11,7 +15,14 @@ const useForecast = () => {
     sunset: "",
   });
 
-  return { fetchOptions, setFetchOptions, selectedDay, setSelectedDay };
+  return {
+    cityData,
+    setCityData,
+    fetchOptions,
+    setFetchOptions,
+    selectedDay,
+    setSelectedDay,
+  };
 };
 
 export default useForecast;

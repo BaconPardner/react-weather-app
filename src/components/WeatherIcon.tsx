@@ -12,6 +12,7 @@ import Rain from "@weather-icons/rain.svg";
 import Sleet from "@weather-icons/sleet.svg";
 import Snow from "@weather-icons/snow.svg";
 import Thunderstorm from "@weather-icons/thunderstorm.svg";
+import Overcast from "@weather-icons/overcast.svg";
 
 type IconsProps = {
   weatherCode: number;
@@ -33,8 +34,8 @@ const DayWeatherIcons = [
   { key: 0, value: <ClearDay /> },
 
   { key: 1, value: <PartlyCloudyDay /> },
-  { key: 2, value: <PartlyCloudyDay /> },
-  { key: 3, value: <Cloudy /> },
+  { key: 2, value: <Cloudy /> },
+  { key: 3, value: <Overcast /> },
 
   { key: 45, value: <Fog /> },
   { key: 48, value: <Fog /> },
@@ -76,8 +77,8 @@ const NightWeatherIcons = [
   { key: 0, value: <ClearNight /> },
 
   { key: 1, value: <PartlyCloudyNight /> },
-  { key: 2, value: <PartlyCloudyNight /> },
-  { key: 3, value: <Cloudy /> },
+  { key: 2, value: <Cloudy /> },
+  { key: 3, value: <Overcast /> },
 
   { key: 45, value: <Fog /> },
   { key: 48, value: <Fog /> },
