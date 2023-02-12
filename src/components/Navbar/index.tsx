@@ -7,7 +7,7 @@ import SearchIcon from "./SearchIcon";
 
 const index = () => {
   const { cityData, setCityData } = useContext(WeatherContext);
-  const [query, setQuery] = useState("Debrecen");
+  const [query, setQuery] = useState("");
   const { isLoading, data } = useGeocodeData(query);
 
   return (
@@ -36,23 +36,35 @@ const index = () => {
                 )}
                 {data &&
                   data.results &&
-                  data.results.map(({ id, name, admin1, country_code }) => (
-                    <Combobox.Option key={id} value={{ id, name, admin1 }}>
-                      {({ active }) => (
-                        <div
-                          className={active ? styles.rowSelected : styles.row}
-                        >
-                          <p className={styles.countryCode}>
-                            {country_code && country_code}
-                          </p>
-                          <p className={styles.city}>
-                            {name}
-                            {admin1 && <>, {admin1}</>}
-                          </p>
-                        </div>
-                      )}
-                    </Combobox.Option>
-                  ))}
+                  data.results.map(
+                    ({
+                      id,
+                      name,
+                      admin1,
+                      country_code,
+                      latitude,
+                      longitude,
+                    }) => (
+                      <Combobox.Option
+                        key={id}
+                        value={{ id, name, admin1, latitude, longitude }}
+                      >
+                        {({ active }) => (
+                          <div
+                            className={active ? styles.rowSelected : styles.row}
+                          >
+                            <p className={styles.countryCode}>
+                              {country_code && country_code}
+                            </p>
+                            <p className={styles.city}>
+                              {name}
+                              {admin1 && <>, {admin1}</>}
+                            </p>
+                          </div>
+                        )}
+                      </Combobox.Option>
+                    )
+                  )}
               </Combobox.Options>
             )}
           </div>

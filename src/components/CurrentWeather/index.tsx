@@ -28,8 +28,8 @@ const CurrentWeather = ({ data }: CurrentWeatherProps) => {
           {temperature_2m[id].toFixed().replace("-0", "0")}&#176;
         </p>
         <div className={styles.temperatureUnit}>
-          <TemperatureButton temperatureUnit="celsius" />
-          <TemperatureButton temperatureUnit="fahrenheit" />
+          <TemperatureButton unit="celsius" />
+          <TemperatureButton unit="fahrenheit" />
         </div>
       </main>
       <p>{weatherInformation(weathercode[id])}</p>

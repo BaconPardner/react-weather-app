@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { IResult } from "../types/geocode";
-import { UseWeatherDataProps } from "../types/hookProps";
+import { TCityData, TTemperatureUnit } from "../types/hookProps";
 
 const useForecast = () => {
-  const [cityData, setCityData] = useState(
-    {} as Pick<IResult, "id" | "name" | "admin1">
-  );
-  const [fetchOptions, setFetchOptions] = useState<UseWeatherDataProps>({
-    temperatureUnit: "celsius",
-  });
+  const [cityData, setCityData] = useState({} as TCityData);
+
+  const [temperatureUnit, setTemperatureUnit] =
+    useState<TTemperatureUnit>("celsius");
+
   const [selectedDay, setSelectedDay] = useState({
     dayOfTheWeek: 0,
     sunrise: "",
@@ -18,8 +16,8 @@ const useForecast = () => {
   return {
     cityData,
     setCityData,
-    fetchOptions,
-    setFetchOptions,
+    temperatureUnit,
+    setTemperatureUnit,
     selectedDay,
     setSelectedDay,
   };

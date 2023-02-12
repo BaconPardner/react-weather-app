@@ -7,11 +7,12 @@ import useWeatherData from "./useWeatherData";
 import styles from "./weather.module.css";
 
 const Weather = () => {
-  const { fetchOptions } = useContext(WeatherContext);
-  const { isLoading, error, data } = useWeatherData(fetchOptions);
+  const { temperatureUnit, cityData } = useContext(WeatherContext);
+
+  const { isLoading, error, data } = useWeatherData(temperatureUnit, cityData);
+  if (!cityData.name) return <div>Search for a city</div>;
 
   if (isLoading) return <div>Loading...</div>;
-
   if (!data) return <div>No data</div>;
 
   if (error)

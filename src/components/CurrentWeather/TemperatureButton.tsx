@@ -1,23 +1,21 @@
 import { useContext } from "react";
 import { WeatherContext } from "../../lib/context";
-import { UseWeatherDataProps } from "../../types/useWeatherDataProps";
+import { TTemperatureUnit } from "../../types/hookProps";
 import styles from "./currentWeather.module.css";
 
-const TemperatureButton = ({
-  temperatureUnit: name,
-}: Pick<UseWeatherDataProps, "temperatureUnit">) => {
-  const { fetchOptions, setFetchOptions } = useContext(WeatherContext);
+const TemperatureButton = ({ unit }: { unit: TTemperatureUnit }) => {
+  const { temperatureUnit, setTemperatureUnit } = useContext(WeatherContext);
 
   return (
     <button
       className={
-        fetchOptions.temperatureUnit === name
+        temperatureUnit === unit
           ? styles.temperatureButtonSelected
           : styles.temperatureButton
       }
-      onClick={() => setFetchOptions({ temperatureUnit: name })}
+      onClick={() => setTemperatureUnit(unit)}
     >
-      {name === "celsius" ? "C" : "F"}
+      {unit === "celsius" ? "C" : "F"}
     </button>
   );
 };
