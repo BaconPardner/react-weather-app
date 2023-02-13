@@ -1,6 +1,6 @@
+import DailyWeatherCard from "./DailyWeatherCard";
 import { IDaily } from "../../types/weather";
 import styles from "../card.module.css";
-import DailyWeatherCard from "./DailyWeatherCard";
 
 type DailyWeatherProps = {
   data: IDaily;

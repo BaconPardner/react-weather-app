@@ -1,10 +1,11 @@
-import { IHourly } from "../../types/weather";
-import WeatherIcon from "../WeatherIcon";
+import { useContext } from "react";
+
 import styles from "./currentWeather.module.css";
-import weatherInformation from "../../lib/weatherInformation";
 import TemperatureButton from "./TemperatureButton";
 import { WeatherContext } from "../../lib/context";
-import { useContext } from "react";
+import weatherInformation from "../../lib/weatherInformation";
+import { IHourly } from "../../types/weather";
+import WeatherIcon from "../WeatherIcon";
 
 type CurrentWeatherProps = {
   data: IHourly;

@@ -1,9 +1,11 @@
 import { useContext, useState } from "react";
+
 import { Combobox } from "@headlessui/react";
-import { WeatherContext } from "../../lib/context";
+
 import styles from "./navbar.module.css";
-import SearchIcon from "./SearchIcon";
 import Results from "./Results";
+import SearchIcon from "./SearchIcon";
+import { WeatherContext } from "../../lib/context";
 
 const index = () => {
   const { cityData, setCityData } = useContext(WeatherContext);

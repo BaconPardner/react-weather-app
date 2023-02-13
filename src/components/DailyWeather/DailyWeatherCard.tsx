@@ -1,9 +1,10 @@
-import { IDaily } from "../../types/weather";
-import WeatherIcon from "../WeatherIcon";
-import styles from "../card.module.css";
-import { WeatherContext } from "../../lib/context";
 import { useContext } from "react";
+
+import { WeatherContext } from "../../lib/context";
 import weatherInformation from "../../lib/weatherInformation";
+import { IDaily } from "../../types/weather";
+import styles from "../card.module.css";
+import WeatherIcon from "../WeatherIcon";
 
 type DailyWeatherCardProps = {
   data: IDaily;

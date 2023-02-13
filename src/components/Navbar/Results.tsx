@@ -1,6 +1,7 @@
 import { Combobox } from "@headlessui/react";
-import useGeocodeData from "../Weather/useGeocodeData";
+
 import styles from "./navbar.module.css";
+import useGeocodeData from "../Weather/useGeocodeData";
 
 type ResultsProps = {
   query: string;

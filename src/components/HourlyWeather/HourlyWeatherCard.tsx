@@ -1,9 +1,10 @@
-import { IHourly } from "../../types/weather";
-import WeatherIcon from "../WeatherIcon";
-import styles from "../card.module.css";
 import { useContext } from "react";
+
 import { WeatherContext } from "../../lib/context";
 import weatherInformation from "../../lib/weatherInformation";
+import { IHourly } from "../../types/weather";
+import styles from "../card.module.css";
+import WeatherIcon from "../WeatherIcon";
 
 type HourlyWeatherCardProps = {
   data: IHourly;

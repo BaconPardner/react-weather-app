@@ -1,5 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
+
+import { useQuery } from "@tanstack/react-query";
+
 import { WeatherContext } from "../../lib/context";
 import { TCityData, TTemperatureUnit } from "../../types/hookProps";
 import { IWeather } from "../../types/weather";

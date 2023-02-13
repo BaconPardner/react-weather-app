@@ -1,12 +1,14 @@
 import { useContext } from "react";
+
+import Spinner from "assets/spinner.svg";
+
+import IndexPointingFinger from "./IndexPointingFinger";
+import useWeatherData from "./useWeatherData";
+import styles from "./weather.module.css";
 import { WeatherContext } from "../../lib/context";
 import CurrentWeather from "../CurrentWeather";
 import DailyWeather from "../DailyWeather";
 import HourlyWeather from "../HourlyWeather";
-import useWeatherData from "./useWeatherData";
-import styles from "./weather.module.css";
-import IndexPointingFinger from "./IndexPointingFinger";
-import Spinner from "@assets/spinner.svg";
 
 const Weather = () => {
   const { temperatureUnit, cityData } = useContext(WeatherContext);

@@ -4,6 +4,7 @@ import Cloudy from "@weather-icons/cloudy.svg";
 import Drizzle from "@weather-icons/drizzle.svg";
 import Fog from "@weather-icons/fog.svg";
 import Hail from "@weather-icons/hail.svg";
+import Overcast from "@weather-icons/overcast.svg";
 import PartlyCloudyDayRain from "@weather-icons/partly-cloudy-day-rain.svg";
 import PartlyCloudyDay from "@weather-icons/partly-cloudy-day.svg";
 import PartlyCloudyNightRain from "@weather-icons/partly-cloudy-night-rain.svg";
@@ -12,7 +13,6 @@ import Rain from "@weather-icons/rain.svg";
 import Sleet from "@weather-icons/sleet.svg";
 import Snow from "@weather-icons/snow.svg";
 import Thunderstorm from "@weather-icons/thunderstorm.svg";
-import Overcast from "@weather-icons/overcast.svg";
 
 type IconsProps = {
   weatherCode: number;

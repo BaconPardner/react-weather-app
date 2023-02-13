@@ -1,8 +1,9 @@
 import { useContext } from "react";
+
+import HourlyWeatherCard from "./HourlyWeatherCard";
 import { WeatherContext } from "../../lib/context";
 import { IHourly } from "../../types/weather";
 import styles from "../card.module.css";
-import HourlyWeatherCard from "./HourlyWeatherCard";
 
 type HourlyWeatherProps = {
   data: IHourly;

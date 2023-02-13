@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import { TCityData, TTemperatureUnit } from "../types/hookProps";
 
 const useForecast = () => {

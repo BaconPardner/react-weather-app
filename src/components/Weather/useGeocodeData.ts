@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+
 import { IGeocode } from "../../types/geocode";
 
 const useGeocodeData = (name: string) => {
