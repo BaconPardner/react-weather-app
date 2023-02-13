@@ -1,7 +1,9 @@
 .navbar {
   background-color: #12446f;
   width: 100%;
+  top: 0;
   position: sticky;
+  z-index: 100;
 }
 
 .searchBar {
@@ -19,7 +21,7 @@
 .searchInput {
   display: flex;
   gap: 0.5rem;
-  background-color: #2b5377; 
+  background-color: #2b5377;
   padding-left: 0.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -37,6 +39,7 @@
 
 .wrapper {
   position: relative;
+  z-index: 100;
 }
 
 .results {
@@ -48,10 +51,7 @@
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   width: 20.5rem;
-  z-index: 200;
 }
-
-
 
 .row {
   padding-top: 0.25rem;
@@ -68,14 +68,14 @@
   margin-top: 4px;
   font-size: 10px;
 }
-  
+
 .rowDefault {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 2.5rem;
   cursor: pointer;
   overflow: hidden;
-} 
+}
 
 .rowSelected {
   padding-top: 0.25rem;

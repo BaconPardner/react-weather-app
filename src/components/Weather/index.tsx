@@ -5,15 +5,41 @@ import DailyWeather from "../DailyWeather";
 import HourlyWeather from "../HourlyWeather";
 import useWeatherData from "./useWeatherData";
 import styles from "./weather.module.css";
+import IndexPointingFinger from "./IndexPointingFinger";
+import Spinner from "@assets/spinner.svg";
 
 const Weather = () => {
   const { temperatureUnit, cityData } = useContext(WeatherContext);
 
   const { isLoading, error, data } = useWeatherData(temperatureUnit, cityData);
-  if (!cityData.name) return <div>Search for a city</div>;
 
-  if (isLoading) return <div>Loading...</div>;
-  if (!data) return <div>No data</div>;
+  if (!cityData.name)
+    return (
+      <div className={styles.container}>
+        <div className={styles.info}>
+          <IndexPointingFinger />
+          <h1 className={styles.infoHeading}>Search for a city</h1>
+        </div>
+      </div>
+    );
+
+  if (isLoading)
+    return (
+      <div className={styles.container}>
+        <div className={styles.centered}>
+          <Spinner />
+        </div>
+      </div>
+    );
+
+  if (!data)
+    return (
+      <div className={styles.container}>
+        <div className={styles.centered}>
+          <h1>No Data</h1>
+        </div>
+      </div>
+    );
 
   if (error)
     return (

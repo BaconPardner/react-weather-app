@@ -16,11 +16,31 @@
   display: flex;
   gap: 4px;
   justify-content: center;
-  font-size: 14px; 
-  width: 100%; 
+  font-size: 14px;
+  width: 100%;
   padding-bottom: 1rem;
 }
 
 .weatherIcons:hover {
   color: deepskyblue;
+}
+
+.info {
+  margin-top: 2rem;
+  margin-left: 5rem;
+  gap: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 5rem;
+  height: 5rem;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
 }
