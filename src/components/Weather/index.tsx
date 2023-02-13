@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import Spinner from "assets/spinner.svg";
+import Spinner from "@assets/spinner.svg";
 
 import IndexPointingFinger from "./IndexPointingFinger";
 import useWeatherData from "./useWeatherData";
@@ -56,19 +56,6 @@ const Weather = () => {
       <CurrentWeather data={data.hourly} />
       <DailyWeather data={data.daily} />
       <HourlyWeather data={data.hourly} />
-      <footer>
-        <div>
-          <p>Weather icons by </p>
-          <a
-            className={styles.weatherIcons}
-            href="https://bas.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Bas Milius
-          </a>
-        </div>
-      </footer>
     </div>
   );
 };

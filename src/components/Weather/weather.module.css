@@ -21,10 +21,6 @@
   padding-bottom: 1rem;
 }
 
-.weatherIcons:hover {
-  color: deepskyblue;
-}
-
 .info {
   margin-top: 2rem;
   margin-left: 5rem;
